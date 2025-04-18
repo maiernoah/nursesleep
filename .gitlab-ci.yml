@@ -1,0 +1,19 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  stage: deploy
+  script:
+    - cd nursesleep
+    - npm install
+    - npm run build
+    - rm -rf ../public
+    - mv build ../public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main 
