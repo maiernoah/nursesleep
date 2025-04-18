@@ -202,7 +202,7 @@ const SleepRecommendation: React.FC<SleepRecommendationProps> = ({ schedule }) =
           }
         }}>
           {allScheduledDays.map(({ date, type }) => {
-            const { recommendation, details } = getSleepRecommendation(date);
+            const { details } = getSleepRecommendation(date);
             const isChoreTime = isChoreDay(type, details);
             return (
               <ListItem key={date.getTime()} disableGutters>
